@@ -15,7 +15,7 @@
     ...
   } @ inputs: {
     homeManagerModules = {
-      tauri = ./modules/tauri/tauri.nix;
+      tauri = ./tauri-nix/tauri.nix;
       default = self.homeManagerModules.tauri;
     };
     homeManagerModule = self.homeManagerModules.tauri;
