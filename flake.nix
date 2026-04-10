@@ -14,8 +14,13 @@
     nixpkgs,
     ...
   } @ inputs: {
+    nixosModules = {
+      tauri = ./tauri-nix/nixos.nix;
+      default = self.nixosModules.tauri;
+    };
+
     homeManagerModules = {
-      tauri = ./tauri-nix/tauri.nix;
+      tauri = ./tauri-nix/home-manager/tauri.nix;
       default = self.homeManagerModules.tauri;
     };
     homeManagerModule = self.homeManagerModules.tauri;
