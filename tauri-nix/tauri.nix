@@ -145,19 +145,4 @@ in {
       }
     ];
   };
-
-  meta = {
-    description = "Declarative Tauri development environment module for Home Manager";
-    maintainers = ["Szyroi"];
-    license = lib.licenses.gpl3;
-
-    example = {
-      programs.tauri = {
-        enable = true;
-        language = "javascript";
-        packageManager = "pnpm";
-        gdkBackend = "wayland";
-      };
-    };
-  };
 }
