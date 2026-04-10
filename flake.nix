@@ -9,7 +9,16 @@
     };
   };
 
-  outputs = {self, ...}: {
-    homeManagerModules.tauri = import ./tauri.nix;
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  } @ inputs: {
+    homeManagerModules = {
+      tauri = ./modules/tauri/tauri.nix;
+      default = self.homeManagerModules.tauri;
+    };
+    homeManagerModule = self.homeManagerModules.tauri;
+    homeModules = self.homeManagerModules;
   };
 }
